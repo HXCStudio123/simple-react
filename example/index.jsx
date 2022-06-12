@@ -1,11 +1,15 @@
-import Sreact from '../packages/sreact';
+import React from '../packages/react';
 
-const element = (
-  <div id="foo">
-    <a>bar</a>
-    <b />
-  </div>
-);
+const Counter = () => {
+  const [count, setCount] = React.useState(0);
+
+  return (
+    <div>
+      <button onClick={() => setCount(count + 1)}>+1</button>
+      <div>count: {count}</div>
+    </div>
+  )
+}
 
 const container = document.querySelector('#app');
-Sreact.render(element, container);
+React.render(<Counter />, container);
